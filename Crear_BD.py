@@ -1,10 +1,8 @@
 import sqlite3
 
-# Conectar a la base de datos (se crea si no existe)
 conn = sqlite3.connect("sap_reports.db")
 cursor = conn.cursor()
 
-# Crear la tabla con todas las columnas necesarias
 cursor.execute('''
     CREATE TABLE reportes_sap (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,7 +18,6 @@ cursor.execute('''
     )
 ''')
 
-# Guardar cambios y cerrar conexión
 conn.commit()
 conn.close()
 
